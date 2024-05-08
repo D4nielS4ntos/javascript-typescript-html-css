@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+body {
+    background-color: gray;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+}
+
+div {
+    display: flex;
+    justify-content: center;
+}
+
+p {
+    text-align: center;
+}
+
+a {
+    display: flex;
+    justify-content: center;
+    padding: 6px;
+}
