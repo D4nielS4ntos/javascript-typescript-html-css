@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        tr, th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+
+        #escuro {
+            background-color: gray;
+            color: white;
+        }
+
+        #coluna {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead id="escuro">
+            <tr>
+                <th rowspan="2">Área</th>
+                <th rowspan="2">Disciplinas</th>
+                <th colspan="2">Notas</th>
+                <th rowspan="2">Média</th>
+            </tr>
+            <tr>
+                <th>Nota 1</th>
+                <th>Nota 2</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th id="coluna" rowspan="5">Exatas</th>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr id="escuro">
+                <th colspan="4">Média de Exatas</th>
+                <th></th>
+            </tr>
+            <tr>
+                <th id="coluna" rowspan="2">Humanas</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+        <tfoot id="escuro">
+            <th colspan="4">Media de Humanas</th>
+            <th></th>
+        </tfoot>
+    </table>
+</body>
+</html>

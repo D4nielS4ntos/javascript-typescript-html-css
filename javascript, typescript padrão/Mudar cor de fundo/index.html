@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mudar a cor do Body</title>
+    <style>
+        body {
+            align-items: center;
+            justify-content: center;
+            background-color: black;
+        }
+        h1 {
+            color: white;
+            text-align: center;
+            background-color: black;
+        }
+        main {
+            display: block;
+            border: 1px solid;
+            border-radius: 5px;
+            padding: 10px;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Teste das cores</h1>
+    <main>
+        <p>Digite uma cor:<input type="text" id="valor">
+            <button onclick="mudarCorDoBody()">Confirmar</button>
+        </p>
+        <p>
+            Resultado: <span id="cor"></span>
+        </p>
+    </main>
+    <script>
+        function mudarCorDoBody() {
+            let valorDaCor = document.querySelector('input#valor')
+            let body = document.querySelector('body')
+            let corAtual = document.querySelector('span#cor')
+
+            alert(valorDaCor.value)
+            corAtual.innerHTML = `#${valorDaCor.value}`
+            body.style.backgroundColor = `#${valorDaCor.value}`
+        }
+    </script>
+</body>
+</html>

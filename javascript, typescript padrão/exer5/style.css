@@ -1,0 +1,42 @@
+body {
+    background-color: rgb(59, 118, 255);
+    font: normal 2em Arial;
+}
+
+header {
+    color: white;
+    text-align: center;
+}
+
+h1 {
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.393);
+}
+
+section {
+    background-color:  white;
+    border-radius: 10px;
+    padding: 15px;
+    width: 500px;
+    margin: auto;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.393);
+    /* text-align: center; */
+}
+
+p {
+    font-size: 0.6em;
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.096);
+}
+
+div {
+    font-size: 0.6em;
+}
+
+select {
+    min-width: 10px;
+    padding: 10px; 
+}
+
+footer {
+    color: white;
+    text-align: center;
+}

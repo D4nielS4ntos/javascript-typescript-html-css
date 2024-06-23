@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+* {
+    margin: 0px;
+    border-radius: 0px;
+}
+
+:root {
+    --fonte1: verdana, Geneva, Tahoma, sans-serif;
+    --fonte2: 'Passion One', cursive;
+    --fonte3: 'Sriracha', cursive;
+}
+
+body {
+    min-height: 100vh;
+    font-family: var(--fonte1);
+}
+
+header {
+    border-radius: 5px 5px 0px 0px;
+}
+
+header > h1 {
+    font-variant: small-caps;
+    font-family: var(--fonte2);
+    font-size: 2em;
+}
+
+header, footer {
+    background-color: black;
+    text-align: center;
+    padding: 20px;
+}
+
+header a, footer a {
+    text-decoration: none;
+    color: white;
+    font-weight: bolder;
+}
+
+header a:hover, footer a:hover {
+    text-decoration: underline;
+}
+
+h1#titulo, p#subtitulo {
+    color: white;
+}
+
+p#subtitulo {
+    font-size: 1em;
+}
+
+main section {
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    line-height: 2em;
+    padding-left: 30px;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    font-family: var(--fonte3);
+    font-size: 1em;
+}
+
+section.imagem {
+    background-color: rgba(0, 0, 0, 0.468);
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.508);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+section.imagem pre {
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 0px 10px;
+    text-shadow: rgba(0, 0, 0, 0.468);
+}
+
+section#img01 {
+    background-image: url('imagens12/background001.jpg');
+    background-position: right center;
+}
+
+section#img02 {
+    background-image: url('imagens12/background002.jpg');
+    background-position: right center;
+}
+
+footer {
+    border-radius: 0px 0px 5px 5px;
+    color: white;
+}
