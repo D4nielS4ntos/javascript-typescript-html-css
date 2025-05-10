@@ -1,0 +1,23 @@
+#include <list>
+
+list<type> = {};
+
+#include <stack>
+
+stack<type> = {};
+
+#include <queue>
+
+queue<type> = {};
+
+#include <deque>
+
+deque<type> = {};
+
+#include <set>
+
+set<type> = {};
+
+#include <map>
+
+map<type> = {};

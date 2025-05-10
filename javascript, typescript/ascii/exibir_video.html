@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vídeo para ASCII</title>
+  <style>
+    body {
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(102, 102, 102);
+    }
+    pre {
+        display: block;
+        margin: auto;
+        max-width: 50%;
+        min-height: 200px;
+        background-color: white;
+        font-family: monospace;
+        line-height: 1;
+        white-space: pre;
+        font-size: 8px; /* Tamanho da fonte para melhor visualização */
+        padding: 10px;
+        border: 1px solid;
+        border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <input type="file" id="videoInput" accept="video/*">
+  <pre id="asciiArt"></pre>
+
+  <script>
+    const asciiArt = document.getElementById('asciiArt');
+    const videoInput = document.getElementById('videoInput');
+
+    // Caracteres ASCII ordenados por intensidade (do mais escuro ao mais claro)
+    const asciiChars = ['@', '#', 'S', '%', '?', '*', '+', ';', ':', ',', '.', ' '];
+
+    videoInput.addEventListener('change', (event) => {
+      const file = event.target.files[0];
+      if (file) {
+        const video = document.createElement('video');
+        video.src = URL.createObjectURL(file);
+        video.autoplay = true;
+        video.loop = true;
+
+        video.onloadeddata = () => {
+          const canvas = document.createElement('canvas');
+          const ctx = canvas.getContext('2d');
+
+          // Definir o tamanho do vídeo reduzido (largura máxima de 100 pixels)
+          const maxWidth = 100;
+          const scale = maxWidth / video.videoWidth;
+          const width = video.videoWidth * scale;
+          const height = video.videoHeight * scale;
+
+          canvas.width = width;
+          canvas.height = height;
+
+          // asciiArt.style.width = `${canvas.width}px`; // Ajustar a largura do pre para o tamanho do vídeo
+          // asciiArt.style.height = `${canvas.height}px`; // Ajustar a largura do pre para o tamanho do vídeo
+
+          // Função para processar cada quadro do vídeo
+          const processFrame = () => {
+            if (video.paused || video.ended) return;
+
+            // Desenhar o quadro atual no canvas
+            ctx.drawImage(video, 0, 0, width, height);
+
+            // Obter os dados da imagem
+            const imageData = ctx.getImageData(0, 0, width, height);
+            const data = imageData.data;
+
+            // Converter pixels em caracteres ASCII
+            let ascii = '';
+            for (let y = 0; y < height; y++) {
+            for (let x = 0; x < width; x++) {
+              const index = (y * width + x) * 4;
+              const r = data[index];
+              const g = data[index + 1];
+              const b = data[index + 2];
+
+              // Calcular a intensidade (média dos valores RGB)
+              const intensity = (r + g + b) / 3;
+
+              // Mapear a intensidade para um caractere ASCII
+              const charIndex = Math.floor((intensity / 255) * (asciiChars.length - 1));
+              ascii += asciiChars[charIndex];
+            }
+            ascii += '\n'; // Nova linha após cada linha de pixels
+          }
+
+          // Exibir a arte ASCII
+          asciiArt.textContent = ascii;
+
+          // Processar o próximo quadro
+          requestAnimationFrame(processFrame);
+        };
+
+        // Iniciar o processamento dos quadros
+        processFrame();
+        };
+      }
+    });
+  </script>
+</body>
+</html>

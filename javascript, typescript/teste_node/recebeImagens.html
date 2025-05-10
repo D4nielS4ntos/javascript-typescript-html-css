@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Clique para puxar a imagem</h1>
+    <!-- <img src="http://localhost:3000/imagem" alt="Imagem" width="200px" height="200px"><br> -->
+    <video controls autoplay>
+        <source src="http://localhost:3000/imagem" type="video/mp4">
+        Your browser does not support the video tag.
+    </video><br>
+    <button type="button">Clique</button><br>
+    <img id="imagem" alt="Imagem">
+    <script>
+        const button = document.querySelector('button');
+        button.addEventListener('click', function(){
+            fetch("http://localhost:3000/imagem/chomusuke.jpg")
+            .then(res => res.blob())
+            .then(blob => {
+                const url = URL.createObjectURL(blob);
+                console.log(url);
+                const img = document.querySelector('#imagem');
+                img.src = url;
+            })
+            .catch(err => console.log(err));
+        });
+    </script>
+</body>
+</html>

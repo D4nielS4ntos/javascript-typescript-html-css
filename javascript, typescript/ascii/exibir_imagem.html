@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Imagem para ASCII</title>
+  <style>
+    pre {
+      font-family: monospace;
+      line-height: 1;
+      white-space: pre;
+    }
+  </style>
+</head>
+<body>
+  <input type="file" id="imageInput" accept="image/*">
+  <pre id="asciiArt"></pre>
+
+  <script>
+    const asciiArt = document.getElementById('asciiArt');
+    const imageInput = document.getElementById('imageInput');
+
+    // Caracteres ASCII ordenados por intensidade (do mais escuro ao mais claro)
+    const asciiChars = ['@', '#', 'S', '%', '?', '*', '+', ';', ':', ',', '.', ' '];
+
+    imageInput.addEventListener('change', (event) => {
+      const file = event.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          const img = new Image();
+          img.src = e.target.result;
+
+          img.onload = () => {
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+
+            // Definir o tamanho da imagem reduzida (largura máxima de 100 pixels)
+            const maxWidth = 300;
+            const scale = maxWidth / img.width;
+            const width = img.width * scale;
+            const height = img.height * scale;
+
+            canvas.width = width;
+            canvas.height = height;
+
+            // Desenhar a imagem no canvas com o novo tamanho
+            ctx.drawImage(img, 0, 0, width, height);
+
+            // Obter os dados da imagem
+            const imageData = ctx.getImageData(0, 0, width, height);
+            const data = imageData.data;
+
+            // Converter pixels em caracteres ASCII
+            let ascii = '';
+            for (let y = 0; y < height; y++) {
+              for (let x = 0; x < width; x++) {
+                const index = (y * width + x) * 4;
+                const r = data[index];
+                const g = data[index + 1];
+                const b = data[index + 2];
+
+                // Calcular a intensidade (média dos valores RGB)
+                const intensity = (r + g + b) / 3;
+
+                // Mapear a intensidade para um caractere ASCII
+                const charIndex = Math.floor((intensity / 255) * (asciiChars.length - 1));
+                ascii += asciiChars[charIndex];
+              }
+              ascii += '\n'; // Nova linha após cada linha de pixels
+            }
+
+            // Exibir a arte ASCII
+            asciiArt.textContent = ascii;
+          };
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+  </script>
+</body>
+</html>

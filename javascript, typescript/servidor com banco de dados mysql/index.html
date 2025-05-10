@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <style>
+        table {
+            background-color: rgb(163, 255, 255);
+            border: 1px solid;
+            border-collapse: collapse;
+        }
+        tr, td {
+            border: 1px solid;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <h1>Mostrar Tabela</h1>
+    <button>Botão</button>
+    <table>  
+    </table>
+     <script>
+        let table = document.querySelector('table')
+        let tr = ''
+        let line = ''
+        let button = document.querySelector('button').addEventListener('click', (event) => {
+        fetch('/cadastro')
+        .then(response => response.json())
+        .then(data => {
+            table.innerHTML +=    `<thead>
+                            <tr>
+                                <td>IDs</td>
+                                <td>NOMES</td>
+                            </tr>
+                        </thead>`
+            for (element in data) {
+                for (camp in element) {
+                    line += `<td>${data[element]["id"]}</td>`
+                    line += `<td>${data[element]["nome"]}</td>`
+                    tr += `<tr>${line}</tr>`
+                    line = ''
+                }
+            }
+            table.innerHTML += tr
+        })
+        // .then(data => console.log(data))
+        .catch(result => console.log(result))
+        })
+     </script>
+</body>
+</html>

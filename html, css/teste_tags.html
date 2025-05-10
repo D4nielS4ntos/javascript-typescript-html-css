@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Tags</h1>
+    <abbr title="Por que">pq</abbr>
+    <p>
+        <code>
+            for (x in lista) {
+                console.log("elemento[x]")
+            }
+        </code>
+    </p>
+    <p>
+        <kbd>Ctrl + Alt</kbd>
+    </p>
+    <input type="text" list="colors">
+    <datalist id="colors">
+        <option value="red"></option>
+        <option value="yellow"></option>
+        <option value="blue"></option>
+    </datalist>
+    <dialog>Opa, mensagem de alerta!</dialog>
+    <button onclick="openMe()">mostrar a mensagem</button>
+    <details>
+        <summary>clica aqui pra mostrar o resto</summary>
+        Não tem nada
+        kkkkk
+        kkkkk
+        kkkkk
+        kkkkk
+        kkkkk
+        kkkkk
+        kkkkk
+        kkkkk
+        kkkkk
+    </details>
+    <time datetime="">13:00</time><br>
+    <p>
+        <ruby>Texto
+            <rt>Esse é o rt</rt>
+            <rp>Esse é o rp</rp>
+        </ruby>
+    </p>
+    <progress max="100" value="60"></progress>
+    <progress max="100" value="50"></progress>
+    <progress max="100" value="30"></progress>
+    <p>
+        <meter min="0" max="100" value="10" low="30" high="60" optimum="90"></meter>
+        <meter min="0" max="100" value="30" low="30" high="60" optimum="90"></meter>
+        <meter min="0" max="100" value="50" low="30" high="60" optimum="90"></meter>
+        <meter min="0" max="100" value="70" low="30" high="60" optimum="90"></meter>
+        <meter min="0" max="100" value="90" low="30" high="60" optimum="90"></meter>
+    </p>
+    <fieldset>
+        <legend>essa é a legenda</legend>
+        <p>esse é o conteúdo</p>
+    </fieldset>
+    <script>
+        function openMe() {
+            document.querySelector('dialog').showModal()
+        }
+    </script>
+</body>
+</html>

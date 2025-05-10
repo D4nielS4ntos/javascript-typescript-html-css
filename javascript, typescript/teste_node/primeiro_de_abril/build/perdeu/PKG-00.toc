@@ -1,0 +1,65 @@
+('C:\\Users\\Danie\\OneDrive\\Área de '
+ 'Trabalho\\Programação\\Exercícios\\javascript, '
+ 'typescript\\teste_node\\primeiro_de_abril\\build\\perdeu\\perdeu.pkg',
+ {'BINARY': True,
+  'DATA': True,
+  'EXECUTABLE': True,
+  'EXTENSION': True,
+  'PYMODULE': True,
+  'PYSOURCE': True,
+  'PYZ': False,
+  'SPLASH': True,
+  'SYMLINK': False},
+ [('pyi-contents-directory _internal', '', 'OPTION'),
+  ('PYZ-00.pyz',
+   'C:\\Users\\Danie\\OneDrive\\Área de '
+   'Trabalho\\Programação\\Exercícios\\javascript, '
+   'typescript\\teste_node\\primeiro_de_abril\\build\\perdeu\\PYZ-00.pyz',
+   'PYZ'),
+  ('struct',
+   'C:\\Users\\Danie\\OneDrive\\Área de '
+   'Trabalho\\Programação\\Exercícios\\javascript, '
+   'typescript\\teste_node\\primeiro_de_abril\\build\\perdeu\\localpycs\\struct.pyc',
+   'PYMODULE'),
+  ('pyimod01_archive',
+   'C:\\Users\\Danie\\OneDrive\\Área de '
+   'Trabalho\\Programação\\Exercícios\\javascript, '
+   'typescript\\teste_node\\primeiro_de_abril\\build\\perdeu\\localpycs\\pyimod01_archive.pyc',
+   'PYMODULE'),
+  ('pyimod02_importers',
+   'C:\\Users\\Danie\\OneDrive\\Área de '
+   'Trabalho\\Programação\\Exercícios\\javascript, '
+   'typescript\\teste_node\\primeiro_de_abril\\build\\perdeu\\localpycs\\pyimod02_importers.pyc',
+   'PYMODULE'),
+  ('pyimod03_ctypes',
+   'C:\\Users\\Danie\\OneDrive\\Área de '
+   'Trabalho\\Programação\\Exercícios\\javascript, '
+   'typescript\\teste_node\\primeiro_de_abril\\build\\perdeu\\localpycs\\pyimod03_ctypes.pyc',
+   'PYMODULE'),
+  ('pyimod04_pywin32',
+   'C:\\Users\\Danie\\OneDrive\\Área de '
+   'Trabalho\\Programação\\Exercícios\\javascript, '
+   'typescript\\teste_node\\primeiro_de_abril\\build\\perdeu\\localpycs\\pyimod04_pywin32.pyc',
+   'PYMODULE'),
+  ('pyiboot01_bootstrap',
+   'C:\\Users\\Danie\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\PyInstaller\\loader\\pyiboot01_bootstrap.py',
+   'PYSOURCE'),
+  ('pyi_rth_inspect',
+   'C:\\Users\\Danie\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\PyInstaller\\hooks\\rthooks\\pyi_rth_inspect.py',
+   'PYSOURCE'),
+  ('pyi_rth__tkinter',
+   'C:\\Users\\Danie\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\PyInstaller\\hooks\\rthooks\\pyi_rth__tkinter.py',
+   'PYSOURCE'),
+  ('perdeu',
+   'C:\\Users\\Danie\\OneDrive\\Área de '
+   'Trabalho\\Programação\\Exercícios\\javascript, '
+   'typescript\\teste_node\\primeiro_de_abril\\perdeu.py',
+   'PYSOURCE')],
+ 'python311.dll',
+ True,
+ False,
+ False,
+ [],
+ None,
+ None,
+ None)

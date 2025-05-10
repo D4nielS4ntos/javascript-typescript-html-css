@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Exemplo Express + HTML</title>
+</head>
+<style>
+    body {
+        background-color: gainsboro;
+    }
+    button {
+        padding: 10px 50px;
+        background-color: aqua;
+    }
+</style>
+<body>
+  <h1>Minha Página</h1>
+  <button>clique</button>
+  <p id="mensagem"></p>
+  <script>
+    // Buscar dados do backend e atualizar o conteúdo na página
+    button = document.querySelector('button').addEventListener('click', (event) => {
+        fetch('/api/mensagem')
+        .then(response => response.json())
+        .then(data => {
+            p = document.querySelector("p")
+            p.innerText += ` ${data.mensagem}`;
+        })
+        .catch(error => console.error(error));
+    })
+  </script>
+</body>
+</html>
